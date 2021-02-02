@@ -1,3 +1,6 @@
+/*
+Class that documents and calculates a rocket's flight
+ */
 public class Rocket
 {
 
