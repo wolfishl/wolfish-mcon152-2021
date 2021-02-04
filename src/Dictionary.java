@@ -33,7 +33,6 @@ public class Dictionary {
             }
         }
         catch(IOException error){
-            System.out.println("Last word was " + words.get(words.size() - 1));
             System.out.println("The filename provided was not valid");
         }
     }
