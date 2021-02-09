@@ -1,3 +1,5 @@
+package Wolfish.physics;
+
 /*
 Class that documents and calculates a rocket's flight
  */
