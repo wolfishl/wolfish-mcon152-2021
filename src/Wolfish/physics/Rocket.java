@@ -6,7 +6,7 @@ Class that documents and calculates a rocket's flight
 public class Rocket
 {
 
-    private final double gravity = 9.8;
+    private static final double gravity = 9.8;
     private final double velocity;
     private final double angle;
 
