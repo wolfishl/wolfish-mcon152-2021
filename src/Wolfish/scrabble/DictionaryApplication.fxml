@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<?import javafx.geometry.Insets?>
+<GridPane fx:controller="Wolfish.scrabble.DictionaryController"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+<padding>
+    <Insets top="25" right="25" bottom="10" left="25"/>
+</padding>
+
+
+<Label text="Word to search:"
+        GridPane.rowIndex="0"/>
+
+<TextField fx:id="wordField"
+            GridPane.rowIndex="1"/>
+
+
+<Button fx:id="searchButton" text="Search" onAction="#searchWord"
+         GridPane.rowIndex="2"/>
+
+
+<Label text="Is this a word?"
+        GridPane.rowIndex="3"/>
+
+<TextField fx:id="result"
+            GridPane.rowIndex="4"/>
+
+
+
+
+</GridPane>
