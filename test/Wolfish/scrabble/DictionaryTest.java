@@ -3,11 +3,12 @@ package Wolfish.scrabble;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.FileNotFoundException;
+
 public class DictionaryTest {
 
     @Test
-    public void realWord()
-    {
+    public void realWord() throws FileNotFoundException {
         //given
         Dictionary dict = new Dictionary("dictionary.txt");
 
@@ -16,8 +17,7 @@ public class DictionaryTest {
     }
 
     @Test
-    public void fakeWord()
-    {
+    public void fakeWord() throws FileNotFoundException {
         //given
         Dictionary dict = new Dictionary("dictionary.txt");
 
