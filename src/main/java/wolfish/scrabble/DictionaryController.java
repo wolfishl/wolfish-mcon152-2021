@@ -1,4 +1,4 @@
-package Wolfish.scrabble;
+package wolfish.scrabble;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

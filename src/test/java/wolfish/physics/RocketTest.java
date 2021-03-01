@@ -1,4 +1,4 @@
-package Wolfish.physics;
+package wolfish.physics;
 
 import org.junit.Assert;
 import org.junit.Test;
