@@ -1,3 +1,6 @@
 out/
 .idea/
 src/xlam.java
+src/main/java/wolfish/scrabble/xlam.java
+.gradle/
+build/
