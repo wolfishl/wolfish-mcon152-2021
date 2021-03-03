@@ -24,4 +24,30 @@ public class DictionaryTest {
         //then
         Assert.assertFalse(dict.determineIfWordIsValid("jkljk"));
     }
+
+    @Test
+    public void definitionRealWord() throws FileNotFoundException{
+        //given
+        Dictionary dict = new Dictionary("dictionary.txt");
+
+        //when
+        String definition = dict.getDefinition("happy");
+
+        //then
+        Assert.assertEquals("marked by joy [adj -PIER, -PIEST] : HAPPILY [adv]", definition);
+
+    }
+
+    @Test
+    public void definitionFakeWord() throws FileNotFoundException{
+        //given
+        Dictionary dict = new Dictionary("dictionary.txt");
+
+        //when
+        String definition = dict.getDefinition("kljdsf");
+
+        //then
+        Assert.assertEquals("", definition);
+
+    }
 }

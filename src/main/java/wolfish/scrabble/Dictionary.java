@@ -2,9 +2,7 @@ package wolfish.scrabble;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 
 /*
@@ -12,7 +10,7 @@ This is a tool to determine if a word tried in scrabble is a valid word
  */
 public class Dictionary {
 
-    private final ArrayList<String> words = new ArrayList<>();
+    private final Map<String, String> wordsToDefinition = new HashMap<>();
 
     /*
     The constructor opens a file containing valid words and creates an ArrayList of the words
@@ -21,13 +19,7 @@ public class Dictionary {
         Scanner inputFile = new Scanner(new File(filename));
 
         while (inputFile.hasNext()) {
-            String text = inputFile.nextLine();
-            int endOfWord = text.indexOf(" ");
-            if (endOfWord != -1) {
-                words.add(text.substring(0, endOfWord).toUpperCase());
-            } else {
-                words.add(text.toUpperCase());
-            }
+            wordsToDefinition.put(inputFile.next(), inputFile.nextLine().trim());
 
         }
 
@@ -37,9 +29,13 @@ public class Dictionary {
     This method takes a String and determines if it is a word
      */
     public boolean determineIfWordIsValid(String word) {
-        String[] wordsArray = words.toArray(new String[0]);
-        Arrays.sort(wordsArray);
-        return Arrays.binarySearch(wordsArray, word.toUpperCase()) >= 0;
+        return wordsToDefinition.containsKey(word.toUpperCase());
+    }
+
+    public String getDefinition(String word)
+    {
+        String definition = wordsToDefinition.get(word.toUpperCase());
+        return definition == null? "" : definition;
     }
 
 
