@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<?import javafx.geometry.Insets?>
+<GridPane fx:controller="wolfish.scrabble.DictionaryGameController"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <padding>
+        <Insets top="25" right="25" bottom="10" left="25"/>
+    </padding>
+
+    <!-- First row - score -->
+
+    <Label fx:id="score" text="Total points: 0"
+           GridPane.rowIndex="0" GridPane.columnIndex="4" GridPane.columnSpan="3" />
+
+<!-- Second Row - the tiles where letters will be displayed -->
+    <Button fx:id="tile1" text="A"
+           GridPane.rowIndex="1" GridPane.columnIndex="0" textFill="coral"/>
+
+    <Button fx:id="tile2" text="A"
+            GridPane.rowIndex="1" GridPane.columnIndex="1" textFill="coral"/>
+
+    <Button fx:id="tile3" text="A"
+            GridPane.rowIndex="1" GridPane.columnIndex="2" textFill="coral"/>
+
+    <Button fx:id="tile4" text="A"
+            GridPane.rowIndex="1" GridPane.columnIndex="3" textFill="coral"/>
+
+    <Button fx:id="tile5" text="A"
+            GridPane.rowIndex="1" GridPane.columnIndex="4" textFill="coral"/>
+
+    <Button fx:id="tile6" text="A"
+            GridPane.rowIndex="1" GridPane.columnIndex="5" textFill="coral"/>
+
+    <Button fx:id="tile7" text="A"
+            GridPane.rowIndex="1" GridPane.columnIndex="6" textFill="coral" />
+
+
+    <!-- Third Row - textbox for the word that's being spelled -->
+
+    <TextField fx:id="word" GridPane.rowIndex="3" GridPane.columnIndex="2" GridPane.columnSpan="3" maxWidth="90"/>
+
+
+    <!-- Fourth Row - the submit button and clear button -->
+
+    <Button fx:id="clear" text="clear"
+            GridPane.rowIndex="5" GridPane.columnIndex="1" GridPane.columnSpan="2" textFill="darkgoldenrod" maxWidth="60"/>
+
+    <Button fx:id="submit" text="sumbit"
+            GridPane.rowIndex="5" GridPane.columnIndex="4" GridPane.columnSpan="3" textFill="darkgoldenrod" maxWidth="60"/>
+
+
+
+
+
+</GridPane>

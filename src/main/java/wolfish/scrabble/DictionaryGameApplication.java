@@ -1,4 +1,4 @@
-package wolfish.physics;
+package wolfish.scrabble;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -6,14 +6,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class RocketApplication extends Application {
+public class DictionaryGameApplication extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("../../../resources/Rocket_application.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/DictionaryGameApplication.fxml"));
 
-        Scene scene = new Scene(root, 450, 475);
+        Scene scene = new Scene(root, 300, 275);
 
-        stage.setTitle("Rocket Calculator");
+        stage.setTitle("Dictionary Game");
         stage.setScene(scene);
         stage.show();
     }

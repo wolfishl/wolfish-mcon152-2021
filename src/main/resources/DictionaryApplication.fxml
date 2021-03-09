@@ -15,11 +15,11 @@
     </padding>
 
 
-    <Label text="Word to search:"
-           GridPane.rowIndex="0"/>
+    <Label  text="Word to search:"
+           GridPane.rowIndex="0"  />
 
     <TextField fx:id="wordField"
-               GridPane.rowIndex="1"/>
+               GridPane.rowIndex="1" />
 
 
     <Button fx:id="searchButton" text="Search" onAction="#searchWord"
