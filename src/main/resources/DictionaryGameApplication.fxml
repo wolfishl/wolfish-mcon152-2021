@@ -5,7 +5,8 @@
 
 
 <?import javafx.geometry.Insets?>
-<GridPane fx:controller="wolfish.scrabble.DictionaryGameController"
+<?import java.util.ArrayList?>
+<GridPane fx:controller="wolfish.scrabble.DictionaryGameController" stylesheets="@Dictionary.css"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
     <padding>
         <Insets top="25" right="25" bottom="10" left="25"/>
@@ -17,25 +18,25 @@
            GridPane.rowIndex="0" GridPane.columnIndex="4" GridPane.columnSpan="3" />
 
 <!-- Second Row - the tiles where letters will be displayed -->
-    <Button fx:id="tile1" text="A"
+    <Button fx:id="tile1"  onAction="#onTileClick"
            GridPane.rowIndex="1" GridPane.columnIndex="0" textFill="coral"/>
 
-    <Button fx:id="tile2" text="A"
+    <Button fx:id="tile2" onAction="#onTileClick"
             GridPane.rowIndex="1" GridPane.columnIndex="1" textFill="coral"/>
 
-    <Button fx:id="tile3" text="A"
+    <Button fx:id="tile3" onAction="#onTileClick"
             GridPane.rowIndex="1" GridPane.columnIndex="2" textFill="coral"/>
 
-    <Button fx:id="tile4" text="A"
+    <Button fx:id="tile4" onAction="#onTileClick"
             GridPane.rowIndex="1" GridPane.columnIndex="3" textFill="coral"/>
 
-    <Button fx:id="tile5" text="A"
+    <Button fx:id="tile5" onAction="#onTileClick"
             GridPane.rowIndex="1" GridPane.columnIndex="4" textFill="coral"/>
 
-    <Button fx:id="tile6" text="A"
+    <Button fx:id="tile6" onAction="#onTileClick"
             GridPane.rowIndex="1" GridPane.columnIndex="5" textFill="coral"/>
 
-    <Button fx:id="tile7" text="A"
+    <Button fx:id="tile7" onAction="#onTileClick"
             GridPane.rowIndex="1" GridPane.columnIndex="6" textFill="coral" />
 
 
@@ -46,13 +47,27 @@
 
     <!-- Fourth Row - the submit button and clear button -->
 
-    <Button fx:id="clear" text="clear"
+    <Button fx:id="clear" text="clear" onAction="#onClear"
             GridPane.rowIndex="5" GridPane.columnIndex="1" GridPane.columnSpan="2" textFill="darkgoldenrod" maxWidth="60"/>
 
-    <Button fx:id="submit" text="sumbit"
+    <Button fx:id="submit" text="sumbit" onAction="#onSubmit"
             GridPane.rowIndex="5" GridPane.columnIndex="4" GridPane.columnSpan="3" textFill="darkgoldenrod" maxWidth="60"/>
 
+    <!-- Fifth Row - when an invalid word is submitted, this says "invalid word" -->
 
+    <Label fx:id="invalid" GridPane.rowIndex="7" GridPane.columnIndex="2" GridPane.columnSpan="3"/>
+
+<fx:define>
+    <ArrayList fx:id="tiles" >
+        <fx:reference source="tile1"/>
+        <fx:reference source="tile2"/>
+        <fx:reference source="tile3"/>
+        <fx:reference source="tile4"/>
+        <fx:reference source="tile5"/>
+        <fx:reference source="tile6"/>
+        <fx:reference source="tile7"/>
+    </ArrayList>
+</fx:define>
 
 
 
