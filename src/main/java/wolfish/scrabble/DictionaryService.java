@@ -1,14 +1,6 @@
 package wolfish.scrabble;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.sql.SQLOutput;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 public class DictionaryService {
 
