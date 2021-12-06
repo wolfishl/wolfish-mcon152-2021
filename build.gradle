@@ -1,10 +1,14 @@
 plugins {
     id 'org.openjfx.javafxplugin' version '0.0.9'
+    id 'java'
     id 'war'
 }
 
 apply plugin: 'java'
 apply plugin: 'application'
+
+group 'org.example'
+version '1.0-SNAPSHOT'
 
 // This is the class with the main to run when the application starts.
 mainClassName = 'wolfish.scrabble.DictionaryGameApplication'
