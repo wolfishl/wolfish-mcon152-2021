@@ -14,17 +14,20 @@ public class Dictionary {
     /*
     The constructor opens a file containing valid words and creates a map of the words and their definitions.
      */
-    public Dictionary(String filename) throws IOException {
+    public Dictionary(BufferedReader reader) throws IOException {
 
-//        InputStream in = getClass().getClassLoader().getResourceAsStream("dictionary.txt");
-//        Scanner s = new Scanner(in).useDelimiter("\\A");
-//        String result = s.hasNext() ? s.next() : "";
-//        System.out.println(result);
-
-        Scanner inputFile = new Scanner(new File(filename));
-
-        while (inputFile.hasNext()) {
-            wordsToDefinition.put(inputFile.next(), inputFile.nextLine().trim());
+        while(true) {
+            String nextLine = reader.readLine();
+            if (nextLine == null)
+            {
+                break;
+            }
+            String[] splitLine = nextLine.split(" ", 2);
+            if (splitLine.length < 2)
+            {
+                continue;
+            }
+            wordsToDefinition.put(splitLine[0], splitLine[1]);
         }
 
     }

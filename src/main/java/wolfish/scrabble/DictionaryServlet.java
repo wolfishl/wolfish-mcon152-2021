@@ -11,11 +11,12 @@ public class DictionaryServlet extends HttpServlet {
 
 
     private final Dictionary dict;
+    private final DictionaryService service;
 
     public DictionaryServlet() throws IOException {
 
-
-        dict = new Dictionary("dictionary.txt");
+        service = new DictionaryService();
+        dict = service.dictionary();
     }
 
     public void doGet(
