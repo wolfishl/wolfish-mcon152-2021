@@ -6,7 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 
 public class DictionaryGameController {
@@ -26,8 +26,9 @@ public class DictionaryGameController {
 
     public DictionaryGameController() {
         try {
-            dict = new Dictionary("dictionary.txt");
-        } catch (FileNotFoundException error) {
+            DictionaryService  service = new DictionaryService();
+            dict = service.dictionary();
+        } catch (IOException error) {
             error.printStackTrace();
         }
 

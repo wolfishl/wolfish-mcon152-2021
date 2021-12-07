@@ -1,7 +1,6 @@
 package wolfish.scrabble;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.*;
 
 
@@ -15,11 +14,16 @@ public class Dictionary {
     /*
     The constructor opens a file containing valid words and creates a map of the words and their definitions.
      */
-    public Dictionary(String filename) throws FileNotFoundException {
-        Scanner inputFile = new Scanner(new File(filename));
+    public Dictionary(BufferedReader reader) throws IOException {
 
-        while (inputFile.hasNext()) {
-            wordsToDefinition.put(inputFile.next(), inputFile.nextLine().trim());
+        String nextLine;
+        while((nextLine = reader.readLine()) != null) {
+            String[] splitLine = nextLine.split(" ", 2);
+            if (splitLine.length < 2)
+            {
+                continue;
+            }
+            wordsToDefinition.put(splitLine[0], splitLine[1]);
         }
 
     }

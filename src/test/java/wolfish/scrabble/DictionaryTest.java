@@ -4,31 +4,35 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class DictionaryTest {
 
     @Test
-    public void realWord() throws FileNotFoundException {
+    public void realWord() throws IOException {
         //given
-        Dictionary dict = new Dictionary("dictionary.txt");
+        DictionaryService service = new DictionaryService();
+        Dictionary dict = service.dictionary();
 
         //then
         Assert.assertTrue(dict.determineIfWordIsValid("aa"));
     }
 
     @Test
-    public void fakeWord() throws FileNotFoundException {
+    public void fakeWord() throws IOException {
         //given
-        Dictionary dict = new Dictionary("dictionary.txt");
+        DictionaryService service = new DictionaryService();
+        Dictionary dict = service.dictionary();
 
         //then
         Assert.assertFalse(dict.determineIfWordIsValid("jkljk"));
     }
 
     @Test
-    public void definitionRealWord() throws FileNotFoundException{
+    public void definitionRealWord() throws IOException {
         //given
-        Dictionary dict = new Dictionary("dictionary.txt");
+        DictionaryService service = new DictionaryService();
+        Dictionary dict = service.dictionary();
 
         //when
         String definition = dict.getDefinition("happy");
@@ -39,9 +43,10 @@ public class DictionaryTest {
     }
 
     @Test
-    public void definitionFakeWord() throws FileNotFoundException{
+    public void definitionFakeWord() throws IOException {
         //given
-        Dictionary dict = new Dictionary("dictionary.txt");
+        DictionaryService service = new DictionaryService();
+        Dictionary dict = service.dictionary();
 
         //when
         String definition = dict.getDefinition("kljdsf");
