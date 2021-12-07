@@ -16,12 +16,8 @@ public class Dictionary {
      */
     public Dictionary(BufferedReader reader) throws IOException {
 
-        while(true) {
-            String nextLine = reader.readLine();
-            if (nextLine == null)
-            {
-                break;
-            }
+        String nextLine;
+        while((nextLine = reader.readLine()) != null) {
             String[] splitLine = nextLine.split(" ", 2);
             if (splitLine.length < 2)
             {
